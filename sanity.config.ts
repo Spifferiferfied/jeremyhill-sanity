@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'jeremy-hill',
 
-  projectId: '1ktq6360',
-  dataset: process.env.SANITY_ENV || 'development',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_DATASET || 'development',
 
   plugins: [structureTool(), visionTool()],
 
