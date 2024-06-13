@@ -43,7 +43,10 @@ export default defineType({
       name: 'category',
       title: 'Category',
       type: 'reference',
-      to: {type: 'category'},
+      to: [{type: 'category'}],
+      options: {
+        filter: 'topLevel == true',
+      },
     }),
     defineField({
       name: 'subCategories',

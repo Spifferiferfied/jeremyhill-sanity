@@ -10,7 +10,12 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
-
+    defineField({
+      name: 'topLevel',
+      title: 'Top Level?',
+      type: 'boolean',
+      description: 'Is this a top level category that has styles attached?'
+    }),
     defineField({
       name: 'name',
       title: 'Name',
