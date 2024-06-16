@@ -61,7 +61,7 @@ export default defineType({
     // as a block type.
     defineArrayMember({
       type: 'image',
-      options: {hotspot: true},
+      options: { hotspot: true },
       fields: [
         {
           name: 'alt',
@@ -72,6 +72,21 @@ export default defineType({
           name: 'caption',
           type: 'string',
           title: 'Caption',
+        },
+        {
+          name: 'height',
+          type: 'string',
+          title: 'Height',
+        },
+        {
+          name: 'width',
+          type: 'string',
+          title: 'Width',
+        },
+        {
+          name: 'float',
+          type: 'string',
+          title: 'Float',
         },
       ]
     }),
