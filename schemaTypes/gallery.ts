@@ -35,6 +35,7 @@ export default defineType({
             name: 'alt',
             type: 'string',
             title: 'Alt',
+            validation: rule => rule.required(),
           },
           {
             name: 'caption',

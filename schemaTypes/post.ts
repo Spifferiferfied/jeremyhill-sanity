@@ -9,11 +9,13 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: rule => rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: rule => rule.required(),
       options: {
         source: 'title',
         maxLength: 96,
@@ -23,6 +25,7 @@ export default defineType({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
+      validation: rule => rule.required(),
       options: {
         hotspot: true,
       },
@@ -31,6 +34,7 @@ export default defineType({
           name: 'alt',
           type: 'string',
           title: 'Alt',
+          validation: rule => rule.required(),
         },
         {
           name: 'caption',
@@ -43,6 +47,7 @@ export default defineType({
       name: 'category',
       title: 'Category',
       type: 'reference',
+      validation: rule => rule.required(),
       to: [{type: 'category'}],
       options: {
         filter: 'topLevel == true',
@@ -67,7 +72,7 @@ export default defineType({
     defineField({
       name: 'blurb',
       title: 'Blurb',
-      type: 'blockContent',
+      type: 'text',
     }),
   ],
 

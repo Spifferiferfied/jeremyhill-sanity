@@ -9,6 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: rule => rule.required(),
     }),
     defineField({
       name: 'topLevel',
@@ -20,6 +21,7 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'slug',
+      validation: rule => rule.required(),
       options: {
         source: 'title',
         maxLength: 96,

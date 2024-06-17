@@ -67,6 +67,7 @@ export default defineType({
           name: 'alt',
           type: 'string',
           title: 'Alt',
+          validation: rule => rule.required(),
         },
         {
           name: 'caption',
@@ -75,12 +76,12 @@ export default defineType({
         },
         {
           name: 'height',
-          type: 'string',
+          type: 'number',
           title: 'Height',
         },
         {
           name: 'width',
-          type: 'string',
+          type: 'number',
           title: 'Width',
         },
         {
