@@ -75,7 +75,7 @@ export default defineType({
     defineField({
       name: 'blurb',
       title: 'Blurb',
-      type: 'text',
+      type: 'blockContent',
       validation: rule => rule.required(),
     }),
   ],
@@ -85,11 +85,11 @@ export default defineType({
       title: 'title',
       media: 'mainImage',
       blurb: 'blurb',
-      slug: 'slug',
     },
     prepare(selection) {
       const { blurb } = selection
-      return {...selection, subtitle: blurb && `${ blurb }`}
+      console.log(blurb[0].value)
+      return {...selection, subtitle: blurb && `${ blurb[0].children[0].text }`}
     },
   },
 })
