@@ -63,16 +63,20 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      initialValue: (new Date()).toISOString(),
+      validation: rule => rule.required(),
     }),
     defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: rule => rule.required(),
     }),
     defineField({
       name: 'blurb',
       title: 'Blurb',
       type: 'text',
+      validation: rule => rule.required(),
     }),
   ],
 

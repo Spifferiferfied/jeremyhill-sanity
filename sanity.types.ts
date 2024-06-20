@@ -13,6 +13,9 @@
  */
 
 // Source: schema.json
+
+export declare const internalGroqTypeReferenceTo: unique symbol
+
 export type SanityImagePaletteSwatch = {
   _type: 'sanity.imagePaletteSwatch'
   background?: string
@@ -379,4 +382,3 @@ export type Slug = {
   current?: string
   source?: string
 }
-export declare const internalGroqTypeReferenceTo: unique symbol
