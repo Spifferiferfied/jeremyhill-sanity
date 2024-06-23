@@ -98,6 +98,9 @@ export default defineType({
       type: 'code',
       name: 'codeBlock',
       title: 'Code Block',
+      options: {
+        withFilename: true,
+      },
     })
   ],
 })
