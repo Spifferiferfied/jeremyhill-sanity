@@ -42,6 +42,19 @@ export default defineType({
             type: 'string',
             title: 'Caption',
           },
+          {
+            name: 'orientation',
+            type: 'string',
+            title: 'Orientation',
+            initialValue: 'landscape',
+            options: {
+              list: [
+                { title: 'Landscape', value: 'landscape' },
+                { title: 'Portrait', value: 'portrait'},
+              ],
+              layout: 'radio',
+            },
+          }
         ]
       }]
     }),
