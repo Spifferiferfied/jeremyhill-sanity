@@ -39,11 +39,12 @@ export default defineType({
     select: {
       title: 'title',
       slug: 'slug',
-      blurb: 'blurb',
+      blurb: 'body',
     },
     prepare(selection) {
       const { blurb } = selection
-      return {...selection, subtitle: blurb && `${ blurb }`}
+      console.log(blurb[0].value)
+      return {...selection, subtitle: blurb && `${ blurb[0].children[0].text }`}
     },
   },
 })

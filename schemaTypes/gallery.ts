@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import { mediaAssetSource } from 'sanity-plugin-media'
 
 export default defineType({
   name: 'gallery',
@@ -55,8 +56,20 @@ export default defineType({
               layout: 'radio',
             },
           }
-        ]
-      }]
+        ],
+      }],
+      options: {
+        layout: 'grid',
+      },
+    }),
+    defineField({
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      options: {
+        sources: [mediaAssetSource],
+      },
+      validation: rule => rule.required().assetRequired(),
     }),
     defineField({
       name: 'category',
@@ -93,13 +106,12 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      media: 'mainImage',
-      blurb: 'blurb',
-      slug: 'slug',
+      images: 'images',
+      des: 'description',
     },
     prepare(selection) {
-      const { blurb } = selection
-      return {...selection, subtitle: blurb && `${ blurb }`}
+      const { images, des, title} = selection
+      return { title: `${ title } [${ images.length }] `, media: images && images[0], subtitle: des && `${ des[0].children[0].text }` }
     },
   },
 })
